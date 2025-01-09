@@ -17,7 +17,10 @@ from itertools import groupby, chain
 import os
 import pickle
 
-import sage.all  # pylint: disable=unused-import
+try:
+    import sage.all  # pylint: disable=unused-import
+except ImportError:
+    import sage.all__sagemath_modules
 
 from sage.rings.rational_field import QQ
 from sage.matrix.constructor import matrix
