@@ -14,7 +14,10 @@ setuptools.setup(
     url="https://github.com/RikVoorhaar/bgg-cohomology",
     ext_modules=cythonize("bggcohomology/*.pyx"),
     packages=setuptools.find_packages(),
-    install_requires=["tqdm"],
+    install_requires=[
+        "numpy",
+        "tqdm",
+    ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
@@ -24,4 +27,12 @@ setuptools.setup(
         "Topic :: Scientific/Engineering :: Mathematics",
     ],
     keywords="sagemath mathematics flag-varieties representation-theory algebra",
+    extras_require={
+        "passagemath": [
+            "passagemath-graphs",
+            "passagemath-groups",
+            "passagemath-modules",
+            "passagemath-repl",
+        ],
+    },
 )

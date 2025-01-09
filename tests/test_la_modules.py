@@ -1,6 +1,9 @@
 import pytest
 
-import sage.all
+try:
+    import sage.all
+except ImportError:
+    import sage.all__sagemath_modules
 
 from sage.rings.integer_ring import ZZ
 from sage.matrix.constructor import matrix
